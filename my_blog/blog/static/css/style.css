@@ -5,8 +5,19 @@
   margin-bottom: 10px
 }
 
-.custom-navbar{
+.post {
+  width: 100%;
+  justify-content: center;
+  margin-block: 8px;
+}
 
+.form{
+  padding: 10px;
+  margin: 10px;
+}
+
+.background {
+  background-color: #f8f9faab;
 }
 
 .bigbrand {
