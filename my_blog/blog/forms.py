@@ -12,7 +12,7 @@ class PostForm(forms.Model):
             'text': forms.Textarea(attrs = {'class': 'editable medium-editor-textarea postcontent'})
         }
 
-class CommentsForm(forms.Model):
+class CommentForm(forms.Model):
 
     class Meta():
         model = Comment
