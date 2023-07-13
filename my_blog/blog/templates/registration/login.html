@@ -9,7 +9,7 @@
   {% if form.errors %}
   <p>Username/Password error, Please try again!</p>
 
-  <form action="{% url 'login' %}"></form>
+  <form action="{% url 'login' %}">
     {% csrf_token %}
       {% form.as_p %}
       <input type="submit" class = 'btn btn-primary', value = 'Login'>

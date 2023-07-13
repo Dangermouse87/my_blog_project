@@ -17,3 +17,20 @@
   margin-left: auto;
   margin-right: auto;
 }
+
+.postdate {
+  text-align: center;
+}
+
+.posttitle {
+  font-family: 'Lilita One', cursive;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-size: 3rem;
+  text-align: center;
+}
+
+.postcontent {
+  /* font-family: 'Lilita One', cursive; */
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.5rem;
+}
