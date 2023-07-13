@@ -12,3 +12,8 @@
 .bigbrand {
   font-size: 1.5rem;
 }
+
+.centerlist {
+  margin-left: auto;
+  margin-right: auto;
+}
