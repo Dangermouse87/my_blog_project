@@ -9,14 +9,14 @@ from django.urls import reverse_lazy
 # Create your views here.
 
 class AboutView(TemplateView):
-    template_name = 'about.html'
+    template_name = 'blog/about.html'
 
 class PostListView(ListView):
     model = Post
     template_name = 'blog/post_list.html'
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__lte = timezone.now().order_by('-published_date'))
+        return Post.objects.filter(published_date__lte = timezone.now()).order_by('-published_date')
 
 class PostDetailView(DetailView):
     model = Post
@@ -44,15 +44,15 @@ class DraftListView(LoginRequiredMixin, ListView):
     template_name = 'blog.post_list.html'
 
     def get_queryset(self):
-        return Post.objects.filter(published_date__isnull = True.order_by('created_date'))
+        return Post.objects.filter(published_date__isnull = True).order_by('created_date')
 
 # 07/13
 
 @login_required
 def post_publish(request, pk):
     post = get_object_or_404(Post, pk = pk)
-    post.publish
-    return ('post_detail', pk = pk)
+    post.publish()
+    return redirect ('post_detail', pk = pk)
 
 
 @login_required

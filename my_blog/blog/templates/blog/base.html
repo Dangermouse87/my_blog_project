@@ -9,32 +9,32 @@
     <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;1,100&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap" rel="stylesheet">
   </head>
   <body>
     <nav class="navbar navbar-expand-lg bg-body-tertiary techfont">
       <div class="container">
-        <ul class="nav navbar-nav">
-          <li><a class="navbar-brand bigbrand" href="{% url post_list %}"><i class="fa-solid fa-house" style="color: #000000;"></i> Home</a></li>
-          <li><a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-user" style="color: #000000;"></i> About</a></li>
+        <ul class="nav navbar-nav align-items-center">
+          <li><a class="navbar-brand bigbrand" href="{% url 'post_list' %}"><i class="fa-solid fa-house" style="color: #000000;"></i></a></li>
+          <li><a class="nav-link" href="{% url 'about' %}"><i class="fa-solid fa-user" style="color: #000000;"></i></a></li>
           <li><a class="nav-link" href="https://www.linkedin.com/in/rajanladwa/"><i class="fa-brands fa-linkedin" style="color: #000000;"></i></i></a></li>
           <li><a class="nav-link" href="https://github.com/Dangermouse87/my_blog_project"><i class="fa-brands fa-square-github" style="color: #000000;"></i></a></li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {% if user.is_authenticated %}
-            <li> <a href="{% url 'post_new' %}"></a><i class="fa-solid fa-plus" style="color: #000000;"></i> New</li>
-            <li><a href="{& url 'post_draft_list' %}"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i> Drafts</a></li>
-            <li><a href="{% url 'logout' %"}><i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i> Logout</a></li>
-            <li><a>Welcome: {{ user.username }}</a></li>
+            <li><a class="mx-4" href="{% url 'post_new' %}"><i class="fa-solid fa-plus" style="color: #000000;"></i> New</a></li>
+            <li><a class="mx-4" href="{% url 'post_drafts_list' %}"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i> Drafts</a></li>
+            <li><a class="mx-4" href="{% url 'logout' %"}><i class="fa-solid fa-right-from-bracket" style="color: #000000;"></i> Logout</a></li>
+            <li><a class="mx-4">Welcome: {{ user.username }}</a></li>
           {% else %}
-            <li><a class="nav navbar-right" href="{& url 'login' &}"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i> Login</a></li>
-          {% end %}
+            <li><a class="nav-link navbar-right" href="{% url 'login' %}"><i class="fa-solid fa-right-to-bracket" style="color: #000000;"></i></a></li>
+          {% endif %}
         </ul>
       </div>
     </nav>
     <div class="container content">
-      <div class="row">
+      <div class="row justify-content-center">
         <div class="col-md-8">
           <div class="blog_posts">
             {% block content %}

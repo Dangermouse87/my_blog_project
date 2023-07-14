@@ -1,14 +1,18 @@
 {% extends 'blog/base.html' %}
 {% block content %}
-<h1>New Post</h1>
-<form class="post-form" method="POST">
+<div class="background rounded border border-dark">
+  <div class="text-center flex justify-content-center">
+    <h1>New Post</h1>
+  </div>
+  <form class="form flex justify-content-center" method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-  <button type="submit" class="save btn btn-primary"><i class="fa-solid fa-floppy-disk" style="color: #000000;"></i> Save</button>
-</form>
+    <button type="submit" class="save btn btn-primary"><i class="fa-solid fa-floppy-disk" style="color: #ffffff;"></i> Save</button>
+  </form>
 
-<!--medium editor argument is a css class we created in forms, to edit individual elements of a form-->
-<script>
-  var editor = new MediumEditor('.editable');
-</script>
+  <!--medium editor argument is a css class we created in forms, to edit individual elements of a form-->
+  <script>
+    var editor = new MediumEditor('.editable');
+  </script>
+</div>
 {% endblock %}
