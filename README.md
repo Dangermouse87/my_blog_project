@@ -22,6 +22,7 @@ This project is a Medium Copycat which allows me to create a post and list them 
 After cloning the repository
 ```
 cd my_blog
+pip install
 python manage.py runserver
 ```
 The app should be available on the browser at `http://localhost:8000`
